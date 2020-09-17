@@ -1,0 +1,73 @@
+.nicktabs-parent {
+    display: inline-block;
+    width: 100%;
+    height: auto;
+}
+
+.nickTabHeaders {
+    display: inline-block;
+    width: 100%;
+    height: auto;
+    text-align: left;
+}
+
+.nickTabHeader {
+    position: relative;
+    display: inline-block;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-left: 1px solid #555555;
+    border-top: 1px solid #555555;
+    border-right: 1px solid #555555;
+    border-bottom: none;
+    background-color: #d9d9d9;
+    z-index: 99;
+    margin-bottom: -2px;
+    margin-top: 2px;
+    margin-right: 2px;
+    padding: 0 10px 0 10px;
+    color: #555555;
+    cursor: pointer;
+}
+
+.nickTabHeader-selected {
+    z-index: 101 !important;
+    background-color: #f2f2f2 !important;
+    color: black !important;
+}
+
+.nickTabContents {
+    display: inline-block;
+    width: 100%;
+    height: auto;
+    z-index: 100;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border: 1px solid #555555;
+    overflow: hidden;
+}
+
+.nickTabContent {
+    position: relative;
+    display: none;
+    text-align: center;
+    width: 100%;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    background-color: #f2f2f2;
+    z-index: 102;
+    margin-bottom: -4px;
+}
+
+.nickTabContent-selected {
+    display: inline-block !important;
+}
+
+.nickTabContentWithHeight{
+    overflow-y: auto;
+}

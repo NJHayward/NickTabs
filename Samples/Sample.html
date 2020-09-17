@@ -1,0 +1,85 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>NickTabs - Sample</title>
+
+    <!-- JQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.0/jquery.min.js"></script>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+            <div class="container">
+                <div class="navbar-brand">NickTabs - Sample</div>
+                <div class="d-sm-inline-flex flex-sm-row-reverse">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" href="https://docs.njhayward.com/NickTabs/">Docs</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container">
+        <main role="main" class="pb-3">
+            <p>Preloaded Tabs with preset height</p>
+            <div id="nickTabsElmPreload">
+                <div nicktabs-title="Tab 1">
+                    This is tab number 1
+                </div>
+                <div nicktabs-title="Tab 2">
+                    This is tab number 2
+                </div>
+                <div nicktabs-title="Tab 3">
+                    This is tab number 3
+                </div>
+                <div nicktabs-title="Tab 4">
+                    This is tab number 4
+                </div>
+            </div>
+
+            <p>Javascript Loaded Tabs with auto height</p>
+            <div id="nickTabsElmJavascript"></div>
+        </main>
+        <script>
+            $(document).ready(function () {
+                /* setup preloaded tabs */
+                $("#nickTabsElmPreload").nickTabs({ TabContentHeight: "500px" });
+
+                /* setup javascript loaded tabs */
+                var jsTabs = $("#nickTabsElmJavascript").nickTabs({ TabContentHeight: null });
+                for (var i = 1; i <= 5; i++) {
+                    jsTabs = jsTabs.addTab("Tab " + i, "<br />This is tab number " + i + " <br /> <input type=\"button\" id=\"removeTab-" + i + "\" value=\"Remove\" /><br /><br />");
+
+                    //setup remove button
+                    $("#removeTab-" + i).click(function () {
+                        alert(i);
+                        jsTabs = jsTabs.removeTab(i-1); //minus 1 to find the index (index starts at 0 not 1)
+                    });
+                }
+            });
+        </script>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            More information can be found in the <a class="text-dark" href="https://docs.njhayward.com/NickTabs/">docs</a>
+        </div>
+    </footer>
+
+    <!-- include dist js files for tabs -->
+    <link rel="stylesheet" href="../Dist/jQuery.nickTabs.min.css">
+    <script src="../Dist/jQuery.nickTabs.min.js"></script>
+</body>
+</html>
